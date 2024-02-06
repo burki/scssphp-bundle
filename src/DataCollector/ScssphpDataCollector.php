@@ -27,7 +27,7 @@ class ScssphpDataCollector extends DataCollector
         $this->reset();
     }
 
-    public function reset()
+    public function reset(): void
     {
         $this->data = [
             'config' => [],
@@ -38,7 +38,7 @@ class ScssphpDataCollector extends DataCollector
         ];
     }
 
-    public function collect(Request $request, Response $response, \Throwable $exception = null)
+    public function collect(Request $request, Response $response, \Throwable $exception = null): void
     {
         // Collect recent build from cache
         $cacheItems = [];
@@ -79,7 +79,7 @@ class ScssphpDataCollector extends DataCollector
         ];
     }
 
-    public function getName()
+    public function getName(): string
     {
         return 'scssphp.collector';
     }

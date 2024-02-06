@@ -29,7 +29,7 @@ class CompileCommand extends Command
         $this->scssParser = $scssParser;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDescription('Compiles configured SCSS sources.')
@@ -41,7 +41,7 @@ class CompileCommand extends Command
         ;
     }
 
-    protected function initialize(InputInterface $input, OutputInterface $output)
+    protected function initialize(InputInterface $input, OutputInterface $output): void
     {
         $config = $this->scssParser->getConfiguration();
         if (!isset($config['assets']) || count($config['assets']) === 0) {
@@ -49,7 +49,7 @@ class CompileCommand extends Command
         }
     }
 
-    protected function interact(InputInterface $input, OutputInterface $output)
+    protected function interact(InputInterface $input, OutputInterface $output): void
     {
         $io = new SymfonyStyle($input, $output);
         $config = $this->scssParser->getConfiguration();
