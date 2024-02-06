@@ -12,8 +12,6 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class CompileCommand extends Command
 {
-    protected static $defaultName = 'scssphp:compile';
-
     /**
      * @var string
      */
@@ -32,6 +30,7 @@ class CompileCommand extends Command
     protected function configure(): void
     {
         $this
+            ->setName('scssphp:compile')
             ->setDescription('Compiles configured SCSS sources.')
             ->addArgument(
                 'asset',
