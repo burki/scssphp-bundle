@@ -21,7 +21,7 @@ class CompileCommand extends Command
 
     private $interacted = false;
 
-    public function __construct(string $name = null, Parser $scssParser = null)
+    public function __construct(?string $name = null, ?Parser $scssParser = null)
     {
         parent::__construct($name);
         $this->scssParser = $scssParser;

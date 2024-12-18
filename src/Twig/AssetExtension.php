@@ -49,7 +49,7 @@ final class AssetExtension extends AbstractExtension
     /**
      * Returns the version of an asset.
      */
-    public function getAssetVersion(string $path, string $packageName = null): string
+    public function getAssetVersion(string $path, ?string $packageName = null): string
     {
         return $this->packages->getVersion($path, $packageName);
     }
